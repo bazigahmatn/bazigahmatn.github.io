@@ -1,0 +1,171 @@
+
+
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جان سیاوش</title>
+    
+    <link rel="stylesheet" href="../../static/pages/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../games/index.html" class="nav-brand">جان سیاوش</a>
+
+            <div class="nav-links">
+                <a href="../../games/index.html">بازی‌ها</a>
+                <a href="../../players/index.html">بازیکنان</a>
+                <a href="../../roles/index.html">نقش‌ها</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        
+<section class="role-detail-page">
+
+    <div class="role-info-card">
+        
+            <img src="../../media/roles/keikhosro-scaled.jpg" alt="کیخسرو">
+        
+
+        <div>
+            <h1>کیخسرو</h1>
+            <p>ایرانی</p>
+            <p></p>
+            <p>نوع گرز: دو گرز جداگانه</p>
+
+            
+                <p>هدف گرز اول: گرسیوز</p>
+            
+
+            
+                <p>هدف گرز دوم: افراسیاب</p>
+            
+        </div>
+    </div>
+
+    <section class="role-leaderboard">
+        <h2>لیدربورد بازیکنان</h2>
+
+        <div class="leaderboard-table-wrapper">
+            <table class="leaderboard-table" id="leaderboardTable">
+                <thead>
+                    <tr>
+                        <th>رتبه</th>
+                        <th data-sort="text">بازیکن</th>
+                        <th data-sort="number">تعداد بازی</th>
+                        <th data-sort="number">مجموع XP</th>
+                        <th data-sort="number">میانگین XP</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                صدی
+                                رضایی
+                            </td>
+                            <td>1</td>
+                            <td>7</td>
+                            <td>7.00</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                کیارش
+                                u6
+                            </td>
+                            <td>1</td>
+                            <td>7</td>
+                            <td>7.00</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>3</td>
+                            <td>
+                                محمد
+                                هادیزاده
+                            </td>
+                            <td>1</td>
+                            <td>7</td>
+                            <td>7.00</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const table = document.getElementById("leaderboardTable");
+    if (!table) return;
+
+    const headers = table.querySelectorAll("thead th[data-sort]");
+    const tbody = table.querySelector("tbody");
+
+    headers.forEach((header, index) => {
+        header.style.cursor = "pointer";
+        header.dataset.direction = index === 3 ? "desc" : "asc";
+
+        header.addEventListener("click", function () {
+            const direction = header.dataset.direction;
+            const type = header.dataset.sort;
+
+            const rows = Array.from(tbody.querySelectorAll("tr"))
+                .filter(row => row.cells.length === headers.length);
+
+            rows.sort((a, b) => {
+                let first = a.cells[index].textContent.trim();
+                let second = b.cells[index].textContent.trim();
+
+                if (type === "number") {
+                    first = parseFloat(first.replace(",", "")) || 0;
+                    second = parseFloat(second.replace(",", "")) || 0;
+                } else {
+                    first = first.toLocaleLowerCase("fa");
+                    second = second.toLocaleLowerCase("fa");
+                }
+
+                if (first < second) return direction === "asc" ? -1 : 1;
+                if (first > second) return direction === "asc" ? 1 : -1;
+                return 0;
+            });
+
+            rows.forEach((row, i) => {
+                row.cells[0].textContent = i + 1;
+                tbody.appendChild(row);
+            });
+
+            headers.forEach(item => {
+                item.removeAttribute("aria-sort");
+            });
+
+            header.dataset.direction = direction === "asc" ? "desc" : "asc";
+            header.setAttribute(
+                "aria-sort",
+                direction === "asc" ? "ascending" : "descending"
+            );
+        });
+    });
+});
+</script>
+
+    </main>
+
+    <footer>
+        <p>جان سیاوش</p>
+    </footer>
+
+    
+</body>
+</html>
