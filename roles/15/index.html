@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جان سیاوش</title>
+    <title>پیران ویسه | جان سیاوش</title>
     
     <link rel="stylesheet" href="../../static/pages/css/style.css">
 </head>
@@ -30,11 +30,20 @@
     <div class="role-info-card">
         
 
-        <div>
+        <div class="role-info-content">
             <h1>پیران ویسه</h1>
-            <p>تورانی</p>
-            <p></p>
-            <p>نوع گرز: بدون گرز</p>
+
+            <div class="role-meta">
+                <p>
+                    <strong>جبهه:</strong>
+                    تورانی
+                </p>
+
+                <p>
+                    <strong>نوع گرز:</strong>
+                    بدون گرز
+                </p>
+            </div>
 
             
 
@@ -43,7 +52,7 @@
     </div>
 
     <section class="role-leaderboard">
-        <h2>لیدربورد بازیکنان</h2>
+        <h2 style="color: #e6edf7 !important;">لیدربورد بازیکنان</h2>
 
         <div class="leaderboard-table-wrapper">
             <table class="leaderboard-table" id="leaderboardTable">
@@ -52,7 +61,7 @@
                         <th>رتبه</th>
                         <th data-sort="text">بازیکن</th>
                         <th data-sort="number">تعداد بازی</th>
-                        <th data-sort="number">مجموع XP</th>
+                        <th data-sort="number" class="default-sort">مجموع XP</th>
                         <th data-sort="number">میانگین XP</th>
                     </tr>
                 </thead>
@@ -61,10 +70,14 @@
                     
                         <tr>
                             <td>1</td>
+
                             <td>
                                 حمیدرضا
-                                ادهم
+                                
+                                    ادهم
+                                
                             </td>
+
                             <td>1</td>
                             <td>4</td>
                             <td>4.00</td>
@@ -77,44 +90,295 @@
 
 </section>
 
+<style>
+.role-detail-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+.role-info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 24px;
+    margin-bottom: 32px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+}
+
+.role-image-wrapper {
+    width: 220px;
+    height: 280px;
+    flex: 0 0 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #f4f6fa;
+    border-radius: 10px;
+}
+
+.role-image-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.role-info-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.role-info-content h1 {
+    margin: 0 0 20px;
+    color: #172b4d;
+    font-size: 28px;
+}
+
+.role-meta p,
+.role-targets p {
+    margin: 10px 0;
+    line-height: 1.9;
+}
+
+.role-description,
+.role-targets {
+    margin-top: 22px;
+}
+
+.role-description h3,
+.role-targets h3 {
+    margin-bottom: 10px;
+    color: #263b5e;
+    font-size: 17px;
+}
+
+.role-description p {
+    line-height: 2;
+    color: #444;
+}
+
+.role-leaderboard {
+    margin-top: 32px;
+}
+
+.role-leaderboard h2 {
+    margin-bottom: 18px;
+    color: #172b4d;
+    font-size: 22px;
+}
+
+.leaderboard-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.leaderboard-table th {
+    padding: 15px 12px;
+    background: #172b4d;
+    color: #fff;
+    font-weight: 600;
+}
+
+.leaderboard-table th[data-sort] {
+    cursor: pointer;
+    user-select: none;
+}
+
+.leaderboard-table th[data-sort]:hover {
+    background: #29466f;
+}
+
+.leaderboard-table td {
+    padding: 13px 12px;
+    border-bottom: 1px solid #e8edf3;
+}
+
+.leaderboard-table tbody tr:nth-child(even) {
+    background: #f3f6fa;
+}
+
+.leaderboard-table tbody tr:hover {
+    background: #e6edf7;
+}
+
+.empty-leaderboard {
+    padding: 24px !important;
+    color: #777;
+}
+
+@media (max-width: 600px) {
+    .role-detail-page {
+        padding: 16px 10px;
+    }
+
+    .role-info-card {
+        flex-direction: column;
+        align-items: center;
+        padding: 18px;
+    }
+
+    .role-image-wrapper {
+        width: 180px;
+        height: 230px;
+        flex-basis: 230px;
+    }
+
+    .role-info-content {
+        width: 100%;
+    }
+
+    .role-info-content h1 {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .role-leaderboard h2 {
+        font-size: 19px;
+    }
+}
+
+.role-detail-page {
+    color: #263238;
+}
+
+.role-info-card {
+    background: #ffffff;
+    color: #263238;
+}
+
+.role-info-content,
+.role-info-content h1,
+.role-info-content h2,
+.role-info-content h3,
+.role-info-content p,
+.role-info-content strong,
+.role-meta,
+.role-description,
+.role-targets {
+    color: #263238 !important;
+}
+
+.role-info-content h1 {
+    color: #172b4d !important;
+}
+
+.role-description h3,
+.role-targets h3 {
+    color: #29466f !important;
+}
+
+.role-info-card p {
+    color: #37474f !important;
+}
+
+.role-leaderboard h2 {
+    color: #172b4d !important;
+}
+
+.leaderboard-table {
+    color: #263238;
+}
+
+.leaderboard-table td {
+    color: #263238 !important;
+}
+
+.leaderboard-table th {
+    color: #ffffff !important;
+}
+
+.empty-leaderboard {
+    color: #555555 !important;
+}
+
+.role-leaderboard {
+    background: transparent !important;
+}
+
+.role-leaderboard h2 {
+    color: #172b4d !important;
+    background: transparent !important;
+    padding: 12px 0 !important;
+    border: none !important;
+    text-shadow: none !important;
+}
+
+
+.role-detail-page .role-leaderboard h2 {
+    display: block !important;
+    color: #172b4d !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    padding: 0 0 16px 0 !important;
+    margin: 0 0 18px 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+</style>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const table = document.getElementById("leaderboardTable");
+
     if (!table) return;
 
     const headers = table.querySelectorAll("thead th[data-sort]");
     const tbody = table.querySelector("tbody");
 
     headers.forEach((header, index) => {
-        header.style.cursor = "pointer";
-        header.dataset.direction = index === 3 ? "desc" : "asc";
+        header.dataset.direction =
+            header.classList.contains("default-sort") ? "desc" : "asc";
 
         header.addEventListener("click", function () {
             const direction = header.dataset.direction;
             const type = header.dataset.sort;
 
             const rows = Array.from(tbody.querySelectorAll("tr"))
-                .filter(row => row.cells.length === headers.length);
+                .filter(row => row.cells.length === 5);
 
             rows.sort((a, b) => {
                 let first = a.cells[index].textContent.trim();
                 let second = b.cells[index].textContent.trim();
 
                 if (type === "number") {
-                    first = parseFloat(first.replace(",", "")) || 0;
-                    second = parseFloat(second.replace(",", "")) || 0;
+                    first = parseFloat(first.replace(/,/g, "")) || 0;
+                    second = parseFloat(second.replace(/,/g, "")) || 0;
                 } else {
                     first = first.toLocaleLowerCase("fa");
                     second = second.toLocaleLowerCase("fa");
                 }
 
-                if (first < second) return direction === "asc" ? -1 : 1;
-                if (first > second) return direction === "asc" ? 1 : -1;
+                if (first < second) {
+                    return direction === "asc" ? -1 : 1;
+                }
+
+                if (first > second) {
+                    return direction === "asc" ? 1 : -1;
+                }
+
                 return 0;
             });
 
-            rows.forEach((row, i) => {
-                row.cells[0].textContent = i + 1;
+            rows.forEach((row, rowIndex) => {
+                row.cells[0].textContent = rowIndex + 1;
                 tbody.appendChild(row);
             });
 
@@ -122,7 +386,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 item.removeAttribute("aria-sort");
             });
 
-            header.dataset.direction = direction === "asc" ? "desc" : "asc";
+            header.dataset.direction =
+                direction === "asc" ? "desc" : "asc";
+
             header.setAttribute(
                 "aria-sort",
                 direction === "asc" ? "ascending" : "descending"
