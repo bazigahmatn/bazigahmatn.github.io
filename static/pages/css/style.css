@@ -1081,3 +1081,229 @@ header nav .nav-brand {
 .role-more-link:hover {
     color: #fff;
 }
+
+.side-leaderboards {
+    margin-top: 65px;
+    padding-top: 45px;
+    border-top: 1px solid rgba(231, 198, 106, 0.3);
+}
+
+.side-leaderboard-group {
+    margin-top: 35px;
+}
+
+.side-leaderboard-header {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.side-leaderboard-header h3 {
+    color: var(--leaderboard-gold, #e7c66a);
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.side-leaderboards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+@media (max-width: 950px) {
+    .side-leaderboards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 620px) {
+    .side-leaderboards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .side-leaderboard-group {
+        margin-top: 28px;
+    }
+}
+
+.event-info {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+    margin: 30px 0 50px;
+}
+
+.event-info-item {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(231, 198, 106, 0.25);
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+.event-info-item span {
+    color: var(--leaderboard-gold-light, #f5dfa0);
+}
+
+.event-info-item strong {
+    color: #fff;
+}
+
+.event-section {
+    margin-top: 55px;
+}
+
+.event-section-heading {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.event-section-heading h2 {
+    color: var(--leaderboard-gold, #e7c66a);
+}
+
+.event-section-heading p {
+    color: var(--leaderboard-gold-light, #f5dfa0);
+}
+
+.event-leaderboard {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.event-leaderboard-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: #fff;
+    color: #222;
+    padding: 16px 20px;
+    border-radius: 12px;
+}
+
+.event-rank {
+    min-width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #f2e3b7;
+    color: #6d5014;
+    font-weight: 900;
+}
+
+.event-player-name {
+    color: #222;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.event-player-stats {
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 800px) {
+    .event-info {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .event-leaderboard-item {
+        flex-wrap: wrap;
+    }
+
+    .event-player-stats {
+        width: 100%;
+        margin-right: 53px;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-info {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .event-player-stats {
+        gap: 8px 12px;
+    }
+}
+
+.event-leaderboard-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 14px;
+    background: #fff;
+}
+
+.event-leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #222;
+    text-align: center;
+    min-width: 650px;
+}
+
+.event-leaderboard-table th {
+    background: #f3e6c3;
+    padding: 17px 12px;
+    white-space: nowrap;
+}
+
+.event-leaderboard-table th button {
+    border: none;
+    background: transparent;
+    color: #654b16;
+    font: inherit;
+    font-weight: 900;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.event-leaderboard-table th button:hover {
+    color: #a27616;
+}
+
+.sort-icon {
+    margin-right: 5px;
+    font-size: 0.85rem;
+}
+
+.event-leaderboard-table td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.event-leaderboard-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.event-leaderboard-table tbody tr:hover {
+    background: #faf7ef;
+}
+
+.event-leaderboard-table td a {
+    color: #222;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.event-leaderboard-table td a:hover {
+    color: #a27616;
+}
+
+.event-leaderboard-table .event-rank {
+    font-weight: 900;
+    color: #8a671e;
+}
+
+.event-leaderboard-table tbody tr:first-child .event-rank {
+    color: #b18a27;
+    font-size: 1.1rem;
+}
